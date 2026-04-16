@@ -224,57 +224,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPERIENCE THE ROOTZ DIFFERENCE */}
-      <section className="py-24 border-b border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold">Experience the RootZ Difference</h2>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid lg:grid-cols-2 gap-12 lg:gap-20"
-          >
-            <div className="space-y-10">
-              <motion.div variants={fadeInUp}>
-                <h3 className="text-primary font-bold text-xl mb-4">State-of-the-Art Dental Technology</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  We constantly embrace the latest advancements in dental technology to ensure our patients receive the safest, most effective, and comfortable care possible.
-                </p>
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <h4 className="text-primary font-semibold italic text-lg mb-4">Safe. Sterile. Secure.</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  At our clinic, your safety is our top priority. Each operatory is meticulously disinfected before and after every dental procedure, ensuring the highest standards of hygiene. Our stringent sterilization practices eliminate even the slightest risk of cross-contamination or infection, making us one of the most hygienic and safest dental clinics you can trust.
-                </p>
-              </motion.div>
-            </div>
-            <div className="space-y-10">
-              <motion.div variants={fadeInUp}>
-                <h3 className="text-primary font-bold text-xl mb-4">Specialized Care for Lasting Smiles</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our clinic is led by a team of distinguished specialists with extensive expertise across all fields of dentistry. With a commitment to excellence and precision, we deliver comprehensive, evidence-based treatments that ensure the highest standards of care and long-term oral health for every patient.
-                </p>
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <h3 className="text-primary font-bold text-xl mb-4">We're Here for You on Weekends</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  RootZ Dental is open on Sundays too, so you can access quality dental care on your holidays — prior appointment is required.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ABOUT PREVIEW */}
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6">
