@@ -40,8 +40,10 @@ export default function BookAppointment() {
     setIsSubmitted(true);
     
     setTimeout(() => {
-      const subject = `New Appointment Request: ${formData.name}`;
-      const body = `Name: ${formData.name}%0D%0APhone: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AService: ${formData.service}%0D%0APreferred Date: ${formData.preferredDate}%0D%0APreferred Time: ${formData.timeSlot}%0D%0A%0D%0ANotes: ${formData.message}`;
+      const subject = encodeURIComponent(`New Appointment Request: ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\nService: ${formData.service}\nPreferred Date: ${formData.preferredDate}\nPreferred Time: ${formData.timeSlot}\n\nNotes: ${formData.message}`
+      );
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
     }, 1500);
   };

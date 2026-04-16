@@ -33,9 +33,10 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission using mailto
-    const subject = `Contact Form Inquiry from ${formData.name}`;
-    const body = `Name: ${formData.name}%0D%0APhone: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0AService Interested In: ${formData.service}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const subject = encodeURIComponent(`Contact Form Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nService Interested In: ${formData.service}\n\nMessage:\n${formData.message}`
+    );
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 
