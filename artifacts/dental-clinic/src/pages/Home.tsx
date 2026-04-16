@@ -12,6 +12,7 @@ export default function Home() {
   const phone = CLINIC_PHONE;
   const address = CLINIC_ADDRESS;
   const hours = CLINIC_HOURS;
+  const base = import.meta.env.BASE_URL;
 
   const services = [
     { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600&h=400" },
@@ -300,11 +301,11 @@ export default function Home() {
             className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
           >
             {[
-              { image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=220", title: "Safe & Sterile", desc: "Hospital-grade sterilization protocols for every instrument and surface." },
-              { image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400&h=220", title: "Painless Care", desc: "Advanced anesthesia and gentle techniques for a comfortable experience." },
-              { image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=220", title: "Expert Dentists", desc: "Highly qualified team with years of specialized clinical experience." },
-              { image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400&h=220", title: "On-Time Always", desc: "We respect your schedule — minimal wait times, maximum efficiency." },
-              { image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400&h=220", title: "Affordable Pricing", desc: "Transparent, fair pricing with no surprise charges or hidden fees." },
+              { image: `${base}why-safe.png`, title: "Safe & Sterile", desc: "Hospital-grade sterilization protocols for every instrument and surface." },
+              { image: `${base}why-painless.png`, title: "Painless Care", desc: "Advanced anesthesia and gentle techniques for a comfortable experience." },
+              { image: `${base}why-expert.png`, title: "Expert Dentists", desc: "Highly qualified team with years of specialized clinical experience." },
+              { image: `${base}why-ontime.png`, title: "On-Time Always", desc: "We respect your schedule — minimal wait times, maximum efficiency." },
+              { image: `${base}why-affordable.png`, title: "Affordable Pricing", desc: "Transparent, fair pricing with no surprise charges or hidden fees." },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeInUp} className="bg-background rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                 <div className="h-36 overflow-hidden">

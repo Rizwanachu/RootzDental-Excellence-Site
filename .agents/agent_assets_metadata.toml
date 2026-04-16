@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "M3s1VdfiDajUBUzPGiEM2"
+uri = "file://artifacts/dental-clinic/public/why-safe.png"
+type = "image"
+title = "safe sterile dental instruments"
+
+[[generated]]
+id = "oqkpIfz7Fxm4_HUiNN89p"
+uri = "file://artifacts/dental-clinic/public/why-painless.png"
+type = "image"
+title = "painless dental care patient"
+
+[[generated]]
+id = "W99M-QQsVQbtEaVPDvaqK"
+uri = "file://artifacts/dental-clinic/public/why-expert.png"
+type = "image"
+title = "expert dentist professional"
+
+[[generated]]
+id = "iQ_BrYrZUbMdlWI-gXGOW"
+uri = "file://artifacts/dental-clinic/public/why-ontime.png"
+type = "image"
+title = "on time dental clinic reception"
+
+[[generated]]
+id = "kvhQrTOdOKlzcPa2EkpIr"
+uri = "file://artifacts/dental-clinic/public/why-affordable.png"
+type = "image"
+title = "affordable dental pricing happy patient"
