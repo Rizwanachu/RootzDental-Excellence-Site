@@ -65,8 +65,8 @@ const servicesData = {
   },
   "dental-implants": {
     title: "Dental Implants",
-    desc: "Permanent, incredibly natural-looking replacements for missing teeth.",
-    longDesc: "Dental implants are the gold standard for replacing missing teeth. A biocompatible titanium post is surgically placed in the jawbone, acting as an artificial root. Once healed, a custom-made crown is attached. Implants look, feel, and function exactly like natural teeth and prevent the bone loss associated with missing teeth.",
+    desc: "Permanent, incredibly natural-looking replacements for missing teeth — at a transparent, affordable cost.",
+    longDesc: "Dental implants are the gold standard for replacing missing teeth. Wondering about dental implants cost? At our clinic, we offer affordable dental implants with transparent pricing and no hidden fees. A biocompatible titanium post is surgically placed in the jawbone, acting as an artificial root. Once healed, a custom-made crown is attached. Implants look, feel, and function exactly like natural teeth and prevent the bone loss associated with missing teeth.",
     benefits: [
       "Permanent, lifelong solution with proper care",
       "Restores full chewing power",
