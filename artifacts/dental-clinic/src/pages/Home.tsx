@@ -4,7 +4,7 @@ import { CheckCircle2, Star, ArrowRight, Shield, Clock, Heart, Award, MapPin, Ph
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, LOCATION, DOCTOR_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_PHONE_2, CLINIC_PHONE_2_RAW, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK } from "@/config";
+import { CLINIC_NAME, LOCATION, DOCTOR_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_PHONE_2, CLINIC_PHONE_2_RAW, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK, SITE_URL } from "@/config";
 
 export default function Home() {
   const clinicName = CLINIC_NAME;
@@ -27,20 +27,20 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "DentalClinic",
       "name": clinicName,
-      "image": "https://yourdomain.com/hero.jpg",
-      "url": "https://yourdomain.com",
+      "image": `${SITE_URL}/opengraph.jpg`,
+      "url": SITE_URL,
       "telephone": phone,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "[Street Address]",
+        "streetAddress": "[Clinic Address]",
         "addressLocality": location,
-        "addressCountry": "US"
+        "addressCountry": "IN"
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "19:00"
+        "opens": "10:00",
+        "closes": "19:30"
       }
     },
     {
@@ -101,7 +101,7 @@ export default function Home() {
       <SEOHead 
         title={`Best Dentist in ${location} | ${clinicName} — Dental Clinic Near Me`}
         description={`Looking for the best dental clinic near you in ${location}? ${clinicName} offers painless root canals, affordable dental implants, teeth whitening, and more. Book your appointment today!`}
-        canonicalUrl="https://yourdomain.com"
+        canonicalUrl={SITE_URL}
         schema={schema}
       />
 

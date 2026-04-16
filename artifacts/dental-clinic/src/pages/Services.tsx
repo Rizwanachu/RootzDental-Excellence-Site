@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2, Activity, Sparkles, Shield, Smile, Wrench, Ph
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, CLINIC_PHONE_RAW } from "@/config";
+import { CLINIC_NAME, CLINIC_PHONE_RAW, SITE_URL } from "@/config";
 
 export default function Services() {
   const clinicName = CLINIC_NAME;
@@ -72,7 +72,7 @@ export default function Services() {
       <SEOHead 
         title={`Our Dental Services | ${clinicName}`}
         description={`${clinicName} offers comprehensive dental services near you — root canal treatment, teeth whitening, affordable dental implants, braces, and more. Book your visit today!`}
-        canonicalUrl="https://yourdomain.com/services"
+        canonicalUrl={`${SITE_URL}/services`}
       />
 
       <section className="pt-32 pb-16 bg-muted/30">

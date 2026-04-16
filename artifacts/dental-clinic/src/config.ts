@@ -9,6 +9,7 @@ export const CLINIC_EMAIL = "[clinic@email.com]";
 export const CLINIC_ADDRESS = "[Clinic Address], Cheruthuruthy";
 export const CLINIC_HOURS = "Mon–Sat: 10:00 AM – 7:30 PM";
 export const WHATSAPP_NUMBER = "918078044666";
+export const SITE_URL = "https://yourdomain.com";
 export const CLINIC_TAGLINE = "Experience the RootZ Difference";
 
 export const WHATSAPP_MESSAGE = encodeURIComponent(

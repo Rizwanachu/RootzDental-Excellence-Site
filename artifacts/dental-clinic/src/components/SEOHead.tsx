@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_URL } from "@/config";
 
 interface SEOHeadProps {
   title: string;
@@ -13,7 +14,7 @@ export default function SEOHead({
   description,
   canonicalUrl,
   schema,
-  ogImage = "https://yourdomain.com/opengraph.jpg"
+  ogImage = `${SITE_URL}/opengraph.jpg`
 }: SEOHeadProps) {
   const schemaArray = schema
     ? Array.isArray(schema)

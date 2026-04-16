@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, CLINIC_ADDRESS, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_EMAIL, CLINIC_HOURS } from "@/config";
+import { CLINIC_NAME, CLINIC_ADDRESS, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_EMAIL, CLINIC_HOURS, SITE_URL } from "@/config";
 
 export default function Contact() {
   const clinicName = CLINIC_NAME;
@@ -45,7 +45,7 @@ export default function Contact() {
       <SEOHead 
         title={`Contact Us | ${clinicName}`}
         description="Get in touch with our dental clinic. Find our location, working hours, phone number, and send us a message directly."
-        canonicalUrl="https://yourdomain.com/contact"
+        canonicalUrl={`${SITE_URL}/contact`}
       />
 
       {/* Header */}

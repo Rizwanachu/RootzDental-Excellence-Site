@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./not-found";
-import { CLINIC_NAME, CLINIC_PHONE_RAW } from "@/config";
+import { CLINIC_NAME, CLINIC_PHONE_RAW, SITE_URL } from "@/config";
 
 const servicesData = {
   "root-canal-treatment": {
@@ -122,19 +122,19 @@ export default function ServiceDetail() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://yourdomain.com"
+          "item": SITE_URL
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://yourdomain.com/services"
+          "item": `${SITE_URL}/services`
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": service.title,
-          "item": `https://yourdomain.com/services/${id}`
+          "item": `${SITE_URL}/services/${id}`
         }
       ]
     }
@@ -145,7 +145,7 @@ export default function ServiceDetail() {
       <SEOHead 
         title={`${service.title} | ${clinicName}`}
         description={`${service.title} at ${clinicName}. ${service.desc} Book your appointment today for affordable and professional dental care.`}
-        canonicalUrl={`https://yourdomain.com/services/${id}`}
+        canonicalUrl={`${SITE_URL}/services/${id}`}
         schema={schema}
       />
 

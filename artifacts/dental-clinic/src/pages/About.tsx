@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 import { CheckCircle2, Shield, Heart, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, DOCTOR_NAME, CLINIC_PHONE_RAW } from "@/config";
+import { CLINIC_NAME, DOCTOR_NAME, CLINIC_PHONE_RAW, SITE_URL } from "@/config";
 
 export default function About() {
   const clinicName = CLINIC_NAME;
@@ -27,7 +27,7 @@ export default function About() {
       <SEOHead 
         title={`About Our Dental Clinic | ${clinicName}`}
         description={`Learn more about ${clinicName}, led by Dr. ${doctorName}. We are committed to providing compassionate, high-quality dental care in a comfortable environment.`}
-        canonicalUrl="https://yourdomain.com/about"
+        canonicalUrl={`${SITE_URL}/about`}
       />
 
       {/* Hero */}
