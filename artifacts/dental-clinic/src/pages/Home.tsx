@@ -15,12 +15,12 @@ export default function Home() {
   const base = import.meta.env.BASE_URL;
 
   const services = [
-    { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600&h=400" },
-    { id: "teeth-cleaning", title: "Teeth Cleaning & Scaling", desc: "Professional plaque removal for healthy gums and fresh breath.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600&h=400" },
-    { id: "tooth-filling", title: "Tooth Filling", desc: "Durable composite fillings to restore decayed or broken teeth.", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=400" },
-    { id: "teeth-whitening", title: "Teeth Whitening", desc: "Safe and effective bleaching for a brighter, more confident smile.", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600&h=400" },
-    { id: "dental-implants", title: "Dental Implants", desc: "Permanent, natural-looking replacements for missing teeth.", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600&h=400" },
-    { id: "braces-aligners", title: "Braces & Aligners", desc: "Straighten your teeth with modern orthodontic solutions.", image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", image: `${base}svc-root-canal.png` },
+    { id: "teeth-cleaning", title: "Teeth Cleaning & Scaling", desc: "Professional plaque removal for healthy gums and fresh breath.", image: `${base}svc-teeth-cleaning.png` },
+    { id: "tooth-filling", title: "Tooth Filling", desc: "Durable composite fillings to restore decayed or broken teeth.", image: `${base}svc-tooth-filling.png` },
+    { id: "teeth-whitening", title: "Teeth Whitening", desc: "Safe and effective bleaching for a brighter, more confident smile.", image: `${base}svc-teeth-whitening.png` },
+    { id: "dental-implants", title: "Dental Implants", desc: "Permanent, natural-looking replacements for missing teeth.", image: `${base}svc-dental-implants.png` },
+    { id: "braces-aligners", title: "Braces & Aligners", desc: "Straighten your teeth with modern orthodontic solutions.", image: `${base}svc-braces-aligners.png` },
   ];
 
   const schema = [

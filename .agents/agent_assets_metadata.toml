@@ -30,3 +30,39 @@ id = "kvhQrTOdOKlzcPa2EkpIr"
 uri = "file://artifacts/dental-clinic/public/why-affordable.png"
 type = "image"
 title = "affordable dental pricing happy patient"
+
+[[generated]]
+id = "APBzP012Km4qf9OOU-9EG"
+uri = "file://artifacts/dental-clinic/public/svc-root-canal.png"
+type = "image"
+title = "root canal treatment dental"
+
+[[generated]]
+id = "rv0jlySISpkLCm4IfxBLZ"
+uri = "file://artifacts/dental-clinic/public/svc-teeth-cleaning.png"
+type = "image"
+title = "teeth cleaning scaling dental"
+
+[[generated]]
+id = "fx9h516J4vrsWOk3N82We"
+uri = "file://artifacts/dental-clinic/public/svc-tooth-filling.png"
+type = "image"
+title = "tooth filling composite dental"
+
+[[generated]]
+id = "wMuJ1wrDpY7Rii0nOMMz9"
+uri = "file://artifacts/dental-clinic/public/svc-teeth-whitening.png"
+type = "image"
+title = "teeth whitening bright smile"
+
+[[generated]]
+id = "pb8lVKHuCtioC0f7WujaD"
+uri = "file://artifacts/dental-clinic/public/svc-dental-implants.png"
+type = "image"
+title = "dental implant titanium jaw"
+
+[[generated]]
+id = "9lfwJn-FID6AgtsgB1FD6"
+uri = "file://artifacts/dental-clinic/public/svc-braces-aligners.png"
+type = "image"
+title = "braces aligners orthodontic smile"
