@@ -37,7 +37,7 @@ export default function Navbar() {
           data-testid="nav-logo"
         >
           <img src="/logo.png" alt={`${CLINIC_NAME} logo`} className="h-12 w-auto object-contain" />
-          <span className="text-xl font-bold text-foreground tracking-tight">{CLINIC_NAME}</span>
+          <span className="hidden lg:inline text-xl font-bold text-foreground tracking-tight">{CLINIC_NAME}</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
