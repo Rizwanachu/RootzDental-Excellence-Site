@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { CheckCircle2, Shield, Heart, Award, ArrowRight } from "lucide-react";
+import { Phone } from "lucide-react";
+import { CheckCircle2, Shield, Heart, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, DOCTOR_NAME } from "@/config";
+import { CLINIC_NAME, DOCTOR_NAME, CLINIC_PHONE_RAW } from "@/config";
 
 export default function About() {
   const clinicName = CLINIC_NAME;
@@ -167,12 +167,12 @@ export default function About() {
       <section className="py-20 bg-card border-t border-border text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6">Experience the difference today.</h2>
-          <Link to="/book-appointment">
-            <Button size="lg" className="rounded-full h-14 px-8 text-base">
-              Schedule a Visit
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <a href={`tel:${CLINIC_PHONE_RAW}`}>
+            <Button size="lg" className="rounded-full h-14 px-8 text-base gap-2">
+              <Phone className="w-5 h-5" />
+              Call to Book
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
     </>

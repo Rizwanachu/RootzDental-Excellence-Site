@@ -136,11 +136,12 @@ export default function Home() {
               </motion.p>
               
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/book-appointment">
-                  <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg shadow-primary/20">
-                    Book Appointment
+                <a href={`tel:${CLINIC_PHONE_RAW}`}>
+                  <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg shadow-primary/20 gap-2">
+                    <Phone className="w-5 h-5" />
+                    Call to Book
                   </Button>
-                </Link>
+                </a>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-2">
                     WhatsApp Now
@@ -470,11 +471,11 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/book-appointment">
-                    <Button size="lg" className="w-full h-14 rounded-full">Book Appointment</Button>
-                  </Link>
                   <a href={`tel:${CLINIC_PHONE_RAW}`}>
-                    <Button variant="outline" size="lg" className="w-full h-14 rounded-full border-2 bg-white hover:bg-muted">Call Now</Button>
+                    <Button size="lg" className="w-full h-14 rounded-full gap-2">
+                      <Phone className="w-5 h-5" />
+                      Call to Book
+                    </Button>
                   </a>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="lg" className="w-full h-14 rounded-full border-2 bg-[#25D366] text-white hover:bg-[#1ebe5d] border-transparent">WhatsApp Us</Button>

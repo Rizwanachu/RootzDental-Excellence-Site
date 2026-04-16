@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CLINIC_NAME } from "@/config";
+import { CLINIC_NAME, CLINIC_PHONE_RAW, CLINIC_PHONE } from "@/config";
 import SEOHead from "@/components/SEOHead";
 
 export default function NotFound() {
@@ -8,7 +9,7 @@ export default function NotFound() {
     <>
     <SEOHead
       title={`Page Not Found | ${CLINIC_NAME}`}
-      description="The page you are looking for could not be found. Return to the homepage or book a dental appointment."
+      description="The page you are looking for could not be found. Return to the homepage or call us to book a dental appointment."
       canonicalUrl="https://yourdomain.com/404"
     />
     <div className="min-h-screen w-full flex items-center justify-center bg-muted/30 pt-20">
@@ -22,9 +23,12 @@ export default function NotFound() {
           <Link to="/">
             <Button className="rounded-full px-8">Go to Homepage</Button>
           </Link>
-          <Link to="/book-appointment">
-            <Button variant="outline" className="rounded-full px-8">Book Appointment</Button>
-          </Link>
+          <a href={`tel:${CLINIC_PHONE_RAW}`}>
+            <Button variant="outline" className="rounded-full px-8 gap-2">
+              <Phone className="w-4 h-4" />
+              {CLINIC_PHONE}
+            </Button>
+          </a>
         </div>
         <p className="text-sm text-muted-foreground mt-8">
           Need help? Contact {CLINIC_NAME} and we'll be happy to assist you.

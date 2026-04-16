@@ -1,8 +1,8 @@
 export const CLINIC_NAME = "[Clinic Name]";
 export const DOCTOR_NAME = "[Doctor Name]";
 export const LOCATION = "[Location]";
-export const CLINIC_PHONE = "[Phone Number]";
-export const CLINIC_PHONE_RAW = "[PhoneRaw]";
+export const CLINIC_PHONE = "+1 (000) 000-0000";
+export const CLINIC_PHONE_RAW = "+10000000000";
 export const CLINIC_EMAIL = "[clinic@email.com]";
 export const CLINIC_ADDRESS = "[Clinic Address]";
 export const CLINIC_HOURS = "[Mon-Sat: 9:00 AM - 7:00 PM]";

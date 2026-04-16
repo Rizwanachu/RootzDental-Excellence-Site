@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X, Calendar } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CLINIC_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW } from "@/config";
@@ -66,12 +66,12 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             {CLINIC_PHONE}
           </a>
-          <Link to="/book-appointment" data-testid="nav-book-btn">
+          <a href={`tel:${CLINIC_PHONE_RAW}`} data-testid="nav-book-btn">
             <Button className="gap-2 rounded-full px-6">
-              <Calendar className="w-4 h-4" />
-              Book Appointment
+              <Phone className="w-4 h-4" />
+              Call Now
             </Button>
-          </Link>
+          </a>
         </div>
 
         <button
@@ -105,12 +105,12 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               {CLINIC_PHONE}
             </a>
-            <Link to="/book-appointment" onClick={() => setMobileMenuOpen(false)}>
+            <a href={`tel:${CLINIC_PHONE_RAW}`} className="w-full">
               <Button className="w-full gap-2 rounded-lg py-6 text-base">
-                <Calendar className="w-4 h-4" />
-                Book Appointment
+                <Phone className="w-4 h-4" />
+                Call Now
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       )}

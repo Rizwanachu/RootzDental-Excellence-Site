@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Activity, Sparkles, Shield, Smile, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle2, Activity, Sparkles, Shield, Smile, Wrench, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME } from "@/config";
+import { CLINIC_NAME, CLINIC_PHONE_RAW } from "@/config";
 
 export default function Services() {
   const clinicName = CLINIC_NAME;
@@ -121,9 +121,9 @@ export default function Services() {
                         Read Details
                         <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
-                      <Link to="/book-appointment">
-                        <Button variant="outline" size="sm" className="rounded-full">Book</Button>
-                      </Link>
+                      <a href={`tel:${CLINIC_PHONE_RAW}`}>
+                        <Button variant="outline" size="sm" className="rounded-full gap-1"><Phone className="w-3 h-3" />Call</Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -140,11 +140,12 @@ export default function Services() {
           <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             Book a general consultation. Our expert doctors will examine your oral health and recommend the best treatment plan for you.
           </p>
-          <Link to="/book-appointment">
-            <Button size="lg" variant="secondary" className="rounded-full h-14 px-8 font-bold">
-              Book a Consultation
+          <a href={`tel:${CLINIC_PHONE_RAW}`}>
+            <Button size="lg" variant="secondary" className="rounded-full h-14 px-8 font-bold gap-2">
+              <Phone className="w-5 h-5" />
+              Call to Book
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
     </>

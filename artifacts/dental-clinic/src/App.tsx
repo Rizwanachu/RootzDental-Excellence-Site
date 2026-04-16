@@ -6,7 +6,6 @@ import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
-import BookAppointment from "@/pages/BookAppointment";
 import NotFound from "@/pages/not-found";
 
 import Navbar from "@/components/Navbar";
@@ -24,7 +23,6 @@ function Router() {
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/book-appointment" element={<BookAppointment />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
