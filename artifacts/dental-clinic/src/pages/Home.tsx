@@ -99,8 +99,8 @@ export default function Home() {
   return (
     <>
       <SEOHead 
-        title={`Best Dental Clinic in ${location} | ${clinicName}`}
-        description={`Top-rated dental clinic in ${location} offering painless root canals, teeth whitening, implants, and more. Book your appointment at ${clinicName} today!`}
+        title={`Best Dentist in ${location} | ${clinicName} — Dental Clinic Near Me`}
+        description={`Looking for the best dental clinic near you in ${location}? ${clinicName} offers painless root canals, affordable dental implants, teeth whitening, and more. Book your appointment today!`}
         canonicalUrl="https://yourdomain.com"
         schema={schema}
       />
@@ -128,11 +128,11 @@ export default function Home() {
               </motion.div>
               
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-                Trusted Dental Care in {location} — <span className="text-primary">Comfortable & Modern</span>
+                Best Dentist in {location} — <span className="text-primary">Patient-Focused & Modern</span>
               </motion.h1>
               
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                At {clinicName}, we provide safe, painless, and advanced dental treatments designed to keep your smile healthy and confident.
+                Looking for a trusted dental clinic near you? At {clinicName}, we provide safe, painless, and advanced dental treatments — from affordable dental implants to teeth whitening — designed to keep your smile healthy and confident.
               </motion.p>
               
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">

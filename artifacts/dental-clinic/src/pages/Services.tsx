@@ -71,7 +71,7 @@ export default function Services() {
     <>
       <SEOHead 
         title={`Our Dental Services | ${clinicName}`}
-        description="Comprehensive dental services including root canal, teeth whitening, implants, braces, and general dentistry. Affordable and painless treatments."
+        description={`${clinicName} offers comprehensive dental services near you — root canal treatment, teeth whitening, affordable dental implants, braces, and more. Book your visit today!`}
         canonicalUrl="https://yourdomain.com/services"
       />
 
