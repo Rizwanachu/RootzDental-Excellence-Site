@@ -56,14 +56,6 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <a
-            href={`tel:${CLINIC_PHONE_RAW}`}
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            data-testid="nav-phone"
-          >
-            <Phone className="w-4 h-4" />
-            {CLINIC_PHONE}
-          </a>
           <a href={`tel:${CLINIC_PHONE_RAW}`} data-testid="nav-book-btn">
             <Button className="gap-2 rounded-full px-6">
               <Phone className="w-4 h-4" />
