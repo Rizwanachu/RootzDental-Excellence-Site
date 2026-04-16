@@ -14,12 +14,12 @@ export default function Home() {
   const hours = CLINIC_HOURS;
 
   const services = [
-    { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", icon: <Activity className="w-8 h-8" /> },
-    { id: "teeth-cleaning", title: "Teeth Cleaning & Scaling", desc: "Professional plaque removal for healthy gums and fresh breath.", icon: <Sparkles className="w-8 h-8" /> },
-    { id: "tooth-filling", title: "Tooth Filling", desc: "Durable composite fillings to restore decayed or broken teeth.", icon: <Shield className="w-8 h-8" /> },
-    { id: "teeth-whitening", title: "Teeth Whitening", desc: "Safe and effective bleaching for a brighter, more confident smile.", icon: <Smile className="w-8 h-8" /> },
-    { id: "dental-implants", title: "Dental Implants", desc: "Permanent, natural-looking replacements for missing teeth.", icon: <Wrench className="w-8 h-8" /> },
-    { id: "braces-aligners", title: "Braces & Aligners", desc: "Straighten your teeth with modern orthodontic solutions.", icon: <CheckCircle2 className="w-8 h-8" /> },
+    { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "teeth-cleaning", title: "Teeth Cleaning & Scaling", desc: "Professional plaque removal for healthy gums and fresh breath.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "tooth-filling", title: "Tooth Filling", desc: "Durable composite fillings to restore decayed or broken teeth.", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "teeth-whitening", title: "Teeth Whitening", desc: "Safe and effective bleaching for a brighter, more confident smile.", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "dental-implants", title: "Dental Implants", desc: "Permanent, natural-looking replacements for missing teeth.", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600&h=400" },
+    { id: "braces-aligners", title: "Braces & Aligners", desc: "Straighten your teeth with modern orthodontic solutions.", image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=600&h=400" },
   ];
 
   const schema = [
@@ -339,12 +339,12 @@ export default function Home() {
             {services.map((service) => (
               <motion.div key={service.id} variants={fadeInUp}>
                 <Card className="h-full border-none shadow-md hover:shadow-xl transition-shadow duration-300 group overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                      {service.icon}
-                    </div>
+                  <div className="h-48 overflow-hidden">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  </div>
+                  <CardContent className="p-7">
                     <h4 className="text-xl font-bold mb-3">{service.title}</h4>
-                    <p className="text-muted-foreground mb-6 line-clamp-2">{service.desc}</p>
+                    <p className="text-muted-foreground mb-5 line-clamp-2">{service.desc}</p>
                     <Link to={`/services/${service.id}`} className="inline-flex items-center font-semibold text-primary group/link">
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
