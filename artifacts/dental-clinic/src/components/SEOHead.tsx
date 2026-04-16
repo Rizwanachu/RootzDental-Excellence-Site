@@ -13,7 +13,7 @@ export default function SEOHead({
   description,
   canonicalUrl,
   schema,
-  ogImage = "https://yourdomain.com/og-image.jpg"
+  ogImage = "https://yourdomain.com/opengraph.jpg"
 }: SEOHeadProps) {
   const schemaArray = schema
     ? Array.isArray(schema)
