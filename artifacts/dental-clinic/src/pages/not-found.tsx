@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CLINIC_NAME } from "@/config";
+import SEOHead from "@/components/SEOHead";
 
 export default function NotFound() {
   return (
+    <>
+    <SEOHead
+      title={`Page Not Found | ${CLINIC_NAME}`}
+      description="The page you are looking for could not be found. Return to the homepage or book a dental appointment."
+      canonicalUrl="https://yourdomain.com/404"
+    />
     <div className="min-h-screen w-full flex items-center justify-center bg-muted/30 pt-20">
       <div className="text-center px-4 max-w-md mx-auto">
         <div className="text-8xl font-extrabold text-primary mb-4">404</div>
@@ -24,5 +31,6 @@ export default function NotFound() {
         </p>
       </div>
     </div>
+    </>
   );
 }
