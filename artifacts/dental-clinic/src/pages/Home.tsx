@@ -237,7 +237,7 @@ export default function Home() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 translate-y-8">
-                  <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f1?auto=format&fit=crop&q=80&w=400&h=500" alt="Doctor" className="rounded-2xl object-cover w-full h-[250px]" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=500" alt="Doctor" className="rounded-2xl object-cover w-full h-[250px]" loading="lazy" />
                   <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400&h=300" alt="Clinic Interior" className="rounded-2xl object-cover w-full h-[200px]" loading="lazy" />
                 </div>
                 <div className="space-y-4">
