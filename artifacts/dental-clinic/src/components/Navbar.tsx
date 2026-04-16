@@ -36,9 +36,7 @@ export default function Navbar() {
           className="flex items-center gap-2"
           data-testid="nav-logo"
         >
-          <div className="w-10 h-10 bg-primary text-primary-foreground rounded-xl flex items-center justify-center text-xl font-bold">
-            S
-          </div>
+          <img src="/logo.png" alt={`${CLINIC_NAME} logo`} className="h-12 w-auto object-contain" />
           <span className="text-xl font-bold text-foreground tracking-tight">{CLINIC_NAME}</span>
         </Link>
 
