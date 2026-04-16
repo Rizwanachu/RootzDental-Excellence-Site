@@ -1,4 +1,4 @@
-import { useParams, Link } from "wouter";
+import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -151,7 +151,7 @@ export default function ServiceDetail() {
 
       <section className="pt-32 pb-12 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
-          <Link href="/services" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 font-medium transition-colors">
+          <Link to="/services" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 font-medium transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to all services
           </Link>
@@ -221,7 +221,7 @@ export default function ServiceDetail() {
 
                   <div className="pt-6 border-t border-border">
                     <p className="text-sm text-muted-foreground mb-4 text-center">Ready to improve your oral health?</p>
-                    <Link href="/book-appointment">
+                    <Link to="/book-appointment">
                       <Button className="w-full h-12 rounded-full gap-2">
                         <Calendar className="w-4 h-4" />
                         Book Appointment

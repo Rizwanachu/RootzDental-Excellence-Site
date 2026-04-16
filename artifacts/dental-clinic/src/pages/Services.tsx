@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Activity, Sparkles, Shield, Smile, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
+import { CLINIC_NAME } from "@/config";
 
 export default function Services() {
-  const clinicName = "Smile Dental Care";
+  const clinicName = CLINIC_NAME;
 
   const services = [
     { 
@@ -116,11 +117,11 @@ export default function Services() {
                     </ul>
 
                     <div className="flex items-center justify-between mt-auto">
-                      <Link href={`/services/${service.id}`} className="text-primary font-semibold hover:underline inline-flex items-center">
+                      <Link to={`/services/${service.id}`} className="text-primary font-semibold hover:underline inline-flex items-center">
                         Read Details
                         <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
-                      <Link href="/book-appointment">
+                      <Link to="/book-appointment">
                         <Button variant="outline" size="sm" className="rounded-full">Book</Button>
                       </Link>
                     </div>
@@ -139,7 +140,7 @@ export default function Services() {
           <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
             Book a general consultation. Our expert doctors will examine your oral health and recommend the best treatment plan for you.
           </p>
-          <Link href="/book-appointment">
+          <Link to="/book-appointment">
             <Button size="lg" variant="secondary" className="rounded-full h-14 px-8 font-bold">
               Book a Consultation
             </Button>

@@ -40,6 +40,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          ui: ["@radix-ui/react-slot", "@radix-ui/react-tooltip", "@radix-ui/react-select", "@radix-ui/react-label"],
+        },
+      },
+    },
   },
   server: {
     port,

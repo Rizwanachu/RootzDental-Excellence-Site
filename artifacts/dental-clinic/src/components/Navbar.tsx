@@ -1,11 +1,11 @@
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CLINIC_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW } from "@/config";
 
 export default function Navbar() {
-  const [location] = useLocation();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,7 +32,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link
-          href="/"
+          to="/"
           className="flex items-center gap-2"
           data-testid="nav-logo"
         >
@@ -46,9 +46,9 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                location === link.href ? "text-primary" : "text-muted-foreground"
+                location.pathname === link.href ? "text-primary" : "text-muted-foreground"
               }`}
               data-testid={`nav-link-${link.name.toLowerCase()}`}
             >
@@ -66,7 +66,7 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             {CLINIC_PHONE}
           </a>
-          <Link href="/book-appointment" data-testid="nav-book-btn">
+          <Link to="/book-appointment" data-testid="nav-book-btn">
             <Button className="gap-2 rounded-full px-6">
               <Calendar className="w-4 h-4" />
               Book Appointment
@@ -88,9 +88,9 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className={`block px-4 py-2 text-base font-medium rounded-lg ${
-                location === link.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
+                location.pathname === link.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -105,7 +105,7 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               {CLINIC_PHONE}
             </a>
-            <Link href="/book-appointment" onClick={() => setMobileMenuOpen(false)}>
+            <Link to="/book-appointment" onClick={() => setMobileMenuOpen(false)}>
               <Button className="w-full gap-2 rounded-lg py-6 text-base">
                 <Calendar className="w-4 h-4" />
                 Book Appointment

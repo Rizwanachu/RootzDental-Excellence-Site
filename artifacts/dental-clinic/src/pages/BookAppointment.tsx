@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "wouter";
 import { CalendarCheck, ShieldCheck, Clock, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,10 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import SEOHead from "@/components/SEOHead";
+import { CLINIC_NAME, CLINIC_EMAIL } from "@/config";
 
 export default function BookAppointment() {
-  const clinicName = "Smile Dental Care";
-  const email = "hello@smiledental.com";
+  const clinicName = CLINIC_NAME;
+  const email = CLINIC_EMAIL;
 
   const [formData, setFormData] = useState({
     name: "",

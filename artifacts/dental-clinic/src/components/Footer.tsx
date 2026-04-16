@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
 import { CLINIC_NAME, CLINIC_TAGLINE, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_EMAIL, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK } from "@/config";
 
@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary text-primary-foreground rounded-xl flex items-center justify-center text-xl font-bold">
                 S
               </div>
@@ -55,7 +55,7 @@ export default function Footer() {
               {links.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
                   >
                     {link.name}
@@ -71,7 +71,7 @@ export default function Footer() {
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
-                    href={service.href}
+                    to={service.href}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
                   >
                     {service.name}

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { CheckCircle2, Shield, Heart, Award, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
+import { CLINIC_NAME, DOCTOR_NAME } from "@/config";
 
 export default function About() {
-  const clinicName = "Smile Dental Care";
-  const doctorName = "Sarah Jenkins";
+  const clinicName = CLINIC_NAME;
+  const doctorName = DOCTOR_NAME;
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -86,6 +87,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800" 
                   alt="Clinic interior" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </motion.div>
@@ -129,6 +131,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" 
                   alt={`Dr. ${doctorName}`}
                   className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
                 />
               </div>
               <div className="p-10 lg:p-16 flex flex-col justify-center">
@@ -164,7 +167,7 @@ export default function About() {
       <section className="py-20 bg-card border-t border-border text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6">Experience the difference today.</h2>
-          <Link href="/book-appointment">
+          <Link to="/book-appointment">
             <Button size="lg" className="rounded-full h-14 px-8 text-base">
               Schedule a Visit
               <ArrowRight className="w-5 h-5 ml-2" />

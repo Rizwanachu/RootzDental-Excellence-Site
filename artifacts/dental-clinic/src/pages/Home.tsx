@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { CheckCircle2, Star, ArrowRight, Shield, Clock, Heart, Award, MapPin, Phone, Activity, Sparkles, Smile, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -136,7 +136,7 @@ export default function Home() {
               </motion.p>
               
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                <Link href="/book-appointment">
+                <Link to="/book-appointment">
                   <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg shadow-primary/20">
                     Book Appointment
                   </Button>
@@ -236,12 +236,12 @@ export default function Home() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 translate-y-8">
-                  <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f1?auto=format&fit=crop&q=80&w=400&h=500" alt="Doctor" className="rounded-2xl object-cover w-full h-[250px]" />
-                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400&h=300" alt="Clinic Interior" className="rounded-2xl object-cover w-full h-[200px]" />
+                  <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f1?auto=format&fit=crop&q=80&w=400&h=500" alt="Doctor" className="rounded-2xl object-cover w-full h-[250px]" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400&h=300" alt="Clinic Interior" className="rounded-2xl object-cover w-full h-[200px]" loading="lazy" />
                 </div>
                 <div className="space-y-4">
-                  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400&h=300" alt="Dental Tools" className="rounded-2xl object-cover w-full h-[200px]" />
-                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400&h=500" alt="Happy Patient" className="rounded-2xl object-cover w-full h-[250px]" />
+                  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400&h=300" alt="Dental Tools" className="rounded-2xl object-cover w-full h-[200px]" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400&h=500" alt="Happy Patient" className="rounded-2xl object-cover w-full h-[250px]" loading="lazy" />
                 </div>
               </div>
             </motion.div>
@@ -271,7 +271,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/about">
+                <Link to="/about">
                   <Button variant="outline" className="h-12 px-6 rounded-full group">
                     Learn More About Us
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -280,6 +280,40 @@ export default function Home() {
               </motion.div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-primary font-bold tracking-wider uppercase text-sm mb-3">Why Choose Us</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">The {clinicName} Difference</h3>
+            <p className="text-muted-foreground text-lg">We go above and beyond to make your dental experience comfortable, transparent, and results-driven.</p>
+          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
+          >
+            {[
+              { icon: Shield, title: "Safe & Sterile", desc: "Hospital-grade sterilization protocols for every instrument and surface." },
+              { icon: Heart, title: "Painless Care", desc: "Advanced anesthesia and gentle techniques for a comfortable experience." },
+              { icon: Award, title: "Expert Dentists", desc: "Highly qualified team with years of specialized clinical experience." },
+              { icon: Clock, title: "On-Time Always", desc: "We respect your schedule — minimal wait times, maximum efficiency." },
+              { icon: Star, title: "Affordable Pricing", desc: "Transparent, fair pricing with no surprise charges or hidden fees." },
+            ].map((item, i) => (
+              <motion.div key={i} variants={fadeInUp} className="bg-background rounded-2xl p-6 border border-border shadow-sm text-center hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-7 h-7" />
+                </div>
+                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -308,7 +342,7 @@ export default function Home() {
                     </div>
                     <h4 className="text-xl font-bold mb-3">{service.title}</h4>
                     <p className="text-muted-foreground mb-6 line-clamp-2">{service.desc}</p>
-                    <Link href={`/services/${service.id}`} className="inline-flex items-center font-semibold text-primary group/link">
+                    <Link to={`/services/${service.id}`} className="inline-flex items-center font-semibold text-primary group/link">
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
@@ -319,7 +353,7 @@ export default function Home() {
           </motion.div>
 
           <div className="mt-12 text-center">
-            <Link href="/services">
+            <Link to="/services">
               <Button size="lg" className="rounded-full h-12 px-8">View All Services</Button>
             </Link>
           </div>
@@ -436,11 +470,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/book-appointment">
+                  <Link to="/book-appointment">
                     <Button size="lg" className="w-full h-14 rounded-full">Book Appointment</Button>
                   </Link>
                   <a href={`tel:${CLINIC_PHONE_RAW}`}>
                     <Button variant="outline" size="lg" className="w-full h-14 rounded-full border-2 bg-white hover:bg-muted">Call Now</Button>
+                  </a>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="lg" className="w-full h-14 rounded-full border-2 bg-[#25D366] text-white hover:bg-[#1ebe5d] border-transparent">WhatsApp Us</Button>
                   </a>
                 </div>
               </div>

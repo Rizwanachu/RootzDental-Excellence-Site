@@ -7,12 +7,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import SEOHead from "@/components/SEOHead";
+import { CLINIC_NAME, CLINIC_ADDRESS, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_EMAIL, CLINIC_HOURS } from "@/config";
 
 export default function Contact() {
-  const clinicName = "Smile Dental Care";
-  const address = "123 Dental Street, Healthcare District, City 10001";
-  const phone = "+1 234 567 890";
-  const email = "hello@smiledental.com";
+  const clinicName = CLINIC_NAME;
+  const address = CLINIC_ADDRESS;
+  const phone = CLINIC_PHONE;
+  const email = CLINIC_EMAIL;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -69,7 +70,7 @@ export default function Contact() {
                       <Phone className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold mb-2">Call Us</h3>
-                    <a href={`tel:${phone.replace(/[^0-9+]/g, '')}`} className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href={`tel:${CLINIC_PHONE_RAW}`} className="text-muted-foreground hover:text-primary transition-colors">
                       {phone}
                     </a>
                   </CardContent>
@@ -101,7 +102,7 @@ export default function Contact() {
                   <Clock className="w-6 h-6 text-primary shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold text-lg mb-1">Working Hours</h3>
-                    <p className="text-muted-foreground">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                    <p className="text-muted-foreground">{CLINIC_HOURS}</p>
                     <p className="text-muted-foreground text-sm mt-1 text-destructive font-medium">Sunday: Closed (Emergencies only)</p>
                   </div>
                 </div>
