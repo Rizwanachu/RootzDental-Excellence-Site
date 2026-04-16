@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @workspace/dental-clinic build",
+  "outputDirectory": "artifacts/dental-clinic/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
