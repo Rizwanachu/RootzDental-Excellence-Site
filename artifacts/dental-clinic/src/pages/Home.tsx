@@ -300,18 +300,18 @@ export default function Home() {
             className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
           >
             {[
-              { icon: Shield, title: "Safe & Sterile", desc: "Hospital-grade sterilization protocols for every instrument and surface." },
-              { icon: Heart, title: "Painless Care", desc: "Advanced anesthesia and gentle techniques for a comfortable experience." },
-              { icon: Award, title: "Expert Dentists", desc: "Highly qualified team with years of specialized clinical experience." },
-              { icon: Clock, title: "On-Time Always", desc: "We respect your schedule — minimal wait times, maximum efficiency." },
-              { icon: Star, title: "Affordable Pricing", desc: "Transparent, fair pricing with no surprise charges or hidden fees." },
+              { img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400&h=240", title: "Safe & Sterile", desc: "Hospital-grade sterilization protocols for every instrument and surface." },
+              { img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e66?auto=format&fit=crop&q=80&w=400&h=240", title: "Painless Care", desc: "Advanced anesthesia and gentle techniques for a comfortable experience." },
+              { img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=240", title: "Expert Dentists", desc: "Highly qualified team with years of specialized clinical experience." },
+              { img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400&h=240", title: "On-Time Always", desc: "We respect your schedule — minimal wait times, maximum efficiency." },
+              { img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400&h=240", title: "Affordable Pricing", desc: "Transparent, fair pricing with no surprise charges or hidden fees." },
             ].map((item, i) => (
-              <motion.div key={i} variants={fadeInUp} className="bg-background rounded-2xl p-6 border border-border shadow-sm text-center hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7" />
+              <motion.div key={i} variants={fadeInUp} className="bg-background rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                <img src={item.img} alt={item.title} className="w-full h-40 object-cover" loading="lazy" />
+                <div className="p-6 text-center">
+                  <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
