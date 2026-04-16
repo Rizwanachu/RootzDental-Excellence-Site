@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./not-found";
+import { CLINIC_NAME } from "@/config";
 
 const servicesData = {
   "root-canal-treatment": {
@@ -100,18 +101,44 @@ export default function ServiceDetail() {
     return <NotFound />;
   }
 
-  const clinicName = "Smile Dental Care";
+  const clinicName = CLINIC_NAME;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": service.schemaType,
-    "name": service.title,
-    "description": service.desc,
-    "provider": {
-      "@type": "DentalClinic",
-      "name": clinicName
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": service.schemaType,
+      "name": service.title,
+      "description": service.desc,
+      "provider": {
+        "@type": "DentalClinic",
+        "name": clinicName
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yourdomain.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://yourdomain.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": service.title,
+          "item": `https://yourdomain.com/services/${id}`
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <>

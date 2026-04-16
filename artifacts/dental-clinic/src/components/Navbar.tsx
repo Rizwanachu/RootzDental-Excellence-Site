@@ -2,14 +2,12 @@ import { Link, useLocation } from "wouter";
 import { Phone, Menu, X, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { CLINIC_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW } from "@/config";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const clinicName = "Smile Dental Care";
-  const clinicPhone = "+1 234 567 890";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +39,7 @@ export default function Navbar() {
           <div className="w-10 h-10 bg-primary text-primary-foreground rounded-xl flex items-center justify-center text-xl font-bold">
             S
           </div>
-          <span className="text-xl font-bold text-foreground tracking-tight">{clinicName}</span>
+          <span className="text-xl font-bold text-foreground tracking-tight">{CLINIC_NAME}</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -61,12 +59,12 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href={`tel:${clinicPhone.replace(/[^0-9+]/g, "")}`}
+            href={`tel:${CLINIC_PHONE_RAW}`}
             className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             data-testid="nav-phone"
           >
             <Phone className="w-4 h-4" />
-            {clinicPhone}
+            {CLINIC_PHONE}
           </a>
           <Link href="/book-appointment" data-testid="nav-book-btn">
             <Button className="gap-2 rounded-full px-6">
@@ -101,11 +99,11 @@ export default function Navbar() {
           ))}
           <div className="pt-4 border-t border-border flex flex-col gap-3">
             <a
-              href={`tel:${clinicPhone.replace(/[^0-9+]/g, "")}`}
+              href={`tel:${CLINIC_PHONE_RAW}`}
               className="flex items-center justify-center gap-2 text-base font-medium p-3 rounded-lg border border-border"
             >
               <Phone className="w-4 h-4" />
-              {clinicPhone}
+              {CLINIC_PHONE}
             </a>
             <Link href="/book-appointment" onClick={() => setMobileMenuOpen(false)}>
               <Button className="w-full gap-2 rounded-lg py-6 text-base">

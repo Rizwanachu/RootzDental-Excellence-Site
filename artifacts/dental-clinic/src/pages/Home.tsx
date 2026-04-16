@@ -4,17 +4,14 @@ import { CheckCircle2, Star, ArrowRight, Shield, Clock, Heart, Award, MapPin, Ph
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
+import { CLINIC_NAME, LOCATION, DOCTOR_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK } from "@/config";
 
 export default function Home() {
-  // PLACEHOLDERS
-  const clinicName = "Smile Dental Care";
-  const location = "New York";
-  const doctorName = "Sarah Jenkins";
-  const phone = "+1 234 567 890";
-  const address = "123 Dental Street, Healthcare District, City 10001";
-  const hours = "Mon - Sat: 9:00 AM - 7:00 PM";
-  
-  const waMessage = encodeURIComponent(`Hi, I'd like to book an appointment at ${clinicName}.`);
+  const clinicName = CLINIC_NAME;
+  const location = LOCATION;
+  const phone = CLINIC_PHONE;
+  const address = CLINIC_ADDRESS;
+  const hours = CLINIC_HOURS;
 
   const services = [
     { id: "root-canal-treatment", title: "Root Canal Treatment", desc: "Painless procedure to save your infected or damaged tooth.", icon: <Activity className="w-8 h-8" /> },
@@ -25,35 +22,66 @@ export default function Home() {
     { id: "braces-aligners", title: "Braces & Aligners", desc: "Straighten your teeth with modern orthodontic solutions.", icon: <CheckCircle2 className="w-8 h-8" /> },
   ];
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "DentalClinic",
-    "name": clinicName,
-    "image": "https://yourdomain.com/hero.jpg",
-    "url": "https://yourdomain.com",
-    "telephone": phone,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Dental Street",
-      "addressLocality": location,
-      "addressRegion": "NY",
-      "postalCode": "10001",
-      "addressCountry": "US"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "DentalClinic",
+      "name": clinicName,
+      "image": "https://yourdomain.com/hero.jpg",
+      "url": "https://yourdomain.com",
+      "telephone": phone,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Street Address]",
+        "addressLocality": location,
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.7128,
-      "longitude": -74.0060
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "19:00"
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What dental services do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer root canal treatment, teeth cleaning, tooth fillings, teeth whitening, dental implants, and braces & aligners."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the treatment painful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use modern anesthesia and gentle techniques to ensure all procedures are as comfortable and painless as possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book an appointment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can book an appointment by calling us, sending a WhatsApp message, or filling out the online booking form on our website."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you accept new patients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We are always accepting new patients. Contact us to schedule your first visit."
+          }
+        }
+      ]
     }
-  };
+  ];
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -113,7 +141,7 @@ export default function Home() {
                     Book Appointment
                   </Button>
                 </Link>
-                <a href={`https://wa.me/${phone.replace(/[^0-9+]/g, '')}?text=${waMessage}`} target="_blank" rel="noopener noreferrer">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full border-2">
                     WhatsApp Now
                   </Button>
@@ -229,7 +257,7 @@ export default function Home() {
                 <h2 className="text-primary font-bold tracking-wider uppercase text-sm mb-3">About Us</h2>
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">Caring for Your Smile with Expertise & Compassion</h3>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  At {clinicName}, we believe dental care should be comfortable, transparent, and stress-free. Led by Dr. {doctorName}, our team is dedicated to providing personalized treatments using the latest technology.
+                  At {clinicName}, we believe dental care should be comfortable, transparent, and stress-free. Led by Dr. {DOCTOR_NAME}, our team is dedicated to providing personalized treatments using the latest technology.
                 </p>
                 <ul className="space-y-4 mb-8 text-foreground font-medium">
                   {[
@@ -316,13 +344,14 @@ export default function Home() {
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-4 gap-8 relative z-10"
+              className="grid md:grid-cols-5 gap-8 relative z-10"
             >
               {[
-                { step: "01", title: "Book Appt.", desc: "Schedule online or call us directly." },
-                { step: "02", title: "Consultation", desc: "Thorough exam & clear diagnosis." },
-                { step: "03", title: "Treatment", desc: "Painless procedure with expert care." },
-                { step: "04", title: "Follow-up", desc: "Post-care guidance for long-term health." }
+                { step: "01", title: "Book Appointment", desc: "Schedule online, call us, or send a WhatsApp message." },
+                { step: "02", title: "Consultation", desc: "Thorough examination and clear diagnosis." },
+                { step: "03", title: "Treatment Plan", desc: "We explain your options clearly before starting." },
+                { step: "04", title: "Comfortable Procedure", desc: "Painless treatment with expert care and modern equipment." },
+                { step: "05", title: "Follow-Up Care", desc: "Post-care guidance to support your long-term oral health." }
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeInUp} className="relative flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-card border-4 border-background rounded-full shadow-lg flex items-center justify-center text-primary font-bold text-xl mb-6 relative z-10">
@@ -410,7 +439,7 @@ export default function Home() {
                   <Link href="/book-appointment">
                     <Button size="lg" className="w-full h-14 rounded-full">Book Appointment</Button>
                   </Link>
-                  <a href={`tel:${phone.replace(/[^0-9+]/g, '')}`}>
+                  <a href={`tel:${CLINIC_PHONE_RAW}`}>
                     <Button variant="outline" size="lg" className="w-full h-14 rounded-full border-2 bg-white hover:bg-muted">Call Now</Button>
                   </a>
                 </div>
