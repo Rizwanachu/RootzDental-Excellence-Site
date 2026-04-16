@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Activity, Sparkles, Shield, Smile, Wrench, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
@@ -8,48 +8,49 @@ import { CLINIC_NAME, CLINIC_PHONE_RAW, SITE_URL } from "@/config";
 
 export default function Services() {
   const clinicName = CLINIC_NAME;
+  const base = import.meta.env.BASE_URL;
 
   const services = [
     { 
       id: "root-canal-treatment", 
       title: "Root Canal Treatment", 
       desc: "Save your infected tooth with our painless root canal therapy. We use advanced rotary endodontics for precise and comfortable treatment.", 
-      icon: <Activity className="w-12 h-12" />,
+      image: `${base}svc-root-canal.png`,
       features: ["Painless procedure", "Saves natural tooth", "Quick recovery"]
     },
     { 
       id: "teeth-cleaning", 
       title: "Teeth Cleaning & Scaling", 
       desc: "Professional cleaning removes plaque and tartar buildup that regular brushing misses, preventing gum disease and bad breath.", 
-      icon: <Sparkles className="w-12 h-12" />,
+      image: `${base}svc-teeth-cleaning.png`,
       features: ["Removes stubborn tartar", "Prevents cavities", "Freshens breath"]
     },
     { 
       id: "tooth-filling", 
       title: "Tooth Filling", 
       desc: "Restore decayed or broken teeth with our tooth-colored composite fillings that blend seamlessly with your natural smile.", 
-      icon: <Shield className="w-12 h-12" />,
+      image: `${base}svc-tooth-filling.png`,
       features: ["Tooth-colored material", "Durable and strong", "Single visit procedure"]
     },
     { 
       id: "teeth-whitening", 
       title: "Teeth Whitening", 
       desc: "Brighten your smile by several shades in just one hour with our professional, safe, and highly effective whitening treatments.", 
-      icon: <Smile className="w-12 h-12" />,
+      image: `${base}svc-teeth-whitening.png`,
       features: ["Instant results", "Safe for enamel", "Removes deep stains"]
     },
     { 
       id: "dental-implants", 
       title: "Dental Implants", 
       desc: "The most permanent and natural-looking solution for missing teeth. Regain full chewing function and smile confidently.", 
-      icon: <Wrench className="w-12 h-12" />,
+      image: `${base}svc-dental-implants.png`,
       features: ["Looks and feels natural", "Permanent solution", "Prevents bone loss"]
     },
     { 
       id: "braces-aligners", 
       title: "Braces & Aligners", 
       desc: "Straighten misaligned teeth and fix bite issues. We offer traditional braces, ceramic braces, and invisible clear aligners.", 
-      icon: <CheckCircle2 className="w-12 h-12" />,
+      image: `${base}svc-braces-aligners.png`,
       features: ["Invisible options available", "Fixes bite issues", "For all ages"]
     },
   ];
@@ -96,12 +97,9 @@ export default function Services() {
           >
             {services.map((service) => (
               <motion.div key={service.id} variants={fadeInUp}>
-                <Card className="h-full border border-border overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-muted relative overflow-hidden">
-                    {/* Placeholder for service specific image */}
-                    <div className="absolute inset-0 bg-primary/5 flex items-center justify-center text-primary">
-                      {service.icon}
-                    </div>
+                <Card className="h-full border border-border overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                  <div className="h-52 overflow-hidden">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
                   <CardContent className="p-8">
                     <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
