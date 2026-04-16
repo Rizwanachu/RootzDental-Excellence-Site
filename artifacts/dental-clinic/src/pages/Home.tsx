@@ -4,7 +4,7 @@ import { CheckCircle2, Star, ArrowRight, Shield, Clock, Heart, Award, MapPin, Ph
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
-import { CLINIC_NAME, LOCATION, DOCTOR_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK } from "@/config";
+import { CLINIC_NAME, LOCATION, DOCTOR_NAME, CLINIC_PHONE, CLINIC_PHONE_RAW, CLINIC_PHONE_2, CLINIC_PHONE_2_RAW, CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_LINK } from "@/config";
 
 export default function Home() {
   const clinicName = CLINIC_NAME;
@@ -161,7 +161,7 @@ export default function Home() {
                   <div className="flex items-center gap-1 text-amber-400 mb-1">
                     {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
                   </div>
-                  <p className="text-sm font-medium text-foreground">4.9/5 from 500+ patients</p>
+                  <p className="text-sm font-medium text-foreground">4.9 stars · 10 Google Reviews</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -183,12 +183,12 @@ export default function Home() {
               
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-500">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                  <Shield className="w-6 h-6" />
+                <div className="w-12 h-12 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center">
+                  <Award className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground">15+ Years</p>
-                  <p className="text-sm text-muted-foreground">Experience</p>
+                  <p className="font-bold text-foreground">Award Winner</p>
+                  <p className="text-sm text-muted-foreground">D Plus Connect 2024</p>
                 </div>
               </div>
             </motion.div>
@@ -202,25 +202,76 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="flex flex-col items-center gap-2">
               <Award className="w-8 h-8 text-primary mb-2" />
-              <h3 className="font-bold text-foreground">Top Rated</h3>
-              <p className="text-sm text-muted-foreground">4.8+ Google Reviews</p>
+              <h3 className="font-bold text-foreground">Award Winner</h3>
+              <p className="text-sm text-muted-foreground">D Plus Connect 2024</p>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <Heart className="w-8 h-8 text-primary mb-2" />
-              <h3 className="font-bold text-foreground">Painless Care</h3>
-              <p className="text-sm text-muted-foreground">Gentle treatments</p>
+              <Star className="w-8 h-8 text-primary mb-2" />
+              <h3 className="font-bold text-foreground">4.9 Google Rating</h3>
+              <p className="text-sm text-muted-foreground">10 Reviews</p>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Shield className="w-8 h-8 text-primary mb-2" />
-              <h3 className="font-bold text-foreground">100% Safe</h3>
-              <p className="text-sm text-muted-foreground">Strict hygiene</p>
+              <h3 className="font-bold text-foreground">Safe & Sterile</h3>
+              <p className="text-sm text-muted-foreground">Global hygiene standards</p>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Clock className="w-8 h-8 text-primary mb-2" />
-              <h3 className="font-bold text-foreground">Modern Tech</h3>
-              <p className="text-sm text-muted-foreground">Advanced equipment</p>
+              <h3 className="font-bold text-foreground">Open Sundays</h3>
+              <p className="text-sm text-muted-foreground">By prior appointment</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE THE ROOTZ DIFFERENCE */}
+      <section className="py-24 border-b border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold">Experience the RootZ Difference</h2>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid lg:grid-cols-2 gap-12 lg:gap-20"
+          >
+            <div className="space-y-10">
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-primary font-bold text-xl mb-4">State-of-the-Art Dental Technology</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We constantly embrace the latest advancements in dental technology to ensure our patients receive the safest, most effective, and comfortable care possible.
+                </p>
+              </motion.div>
+              <motion.div variants={fadeInUp}>
+                <h4 className="text-primary font-semibold italic text-lg mb-4">Safe. Sterile. Secure.</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  At our clinic, your safety is our top priority. Each operatory is meticulously disinfected before and after every dental procedure, ensuring the highest standards of hygiene. Our stringent sterilization practices eliminate even the slightest risk of cross-contamination or infection, making us one of the most hygienic and safest dental clinics you can trust.
+                </p>
+              </motion.div>
+            </div>
+            <div className="space-y-10">
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-primary font-bold text-xl mb-4">Specialized Care for Lasting Smiles</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our clinic is led by a team of distinguished specialists with extensive expertise across all fields of dentistry. With a commitment to excellence and precision, we deliver comprehensive, evidence-based treatments that ensure the highest standards of care and long-term oral health for every patient.
+                </p>
+              </motion.div>
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-primary font-bold text-xl mb-4">We're Here for You on Weekends</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  RootZ Dental is open on Sundays too, so you can access quality dental care on your holidays — prior appointment is required.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -425,6 +476,42 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OPENING HOURS */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto bg-card rounded-3xl shadow-lg overflow-hidden border border-border">
+            <div className="bg-primary/5 text-center py-5 border-b border-border">
+              <h2 className="text-xl font-bold text-primary tracking-widest uppercase">Opening Hours</h2>
+            </div>
+            <div className="flex flex-col md:flex-row">
+              <div className="h-48 md:h-auto md:w-2/5 relative">
+                <img
+                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400"
+                  alt={`${clinicName} reception`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-8 flex flex-col justify-center gap-5 md:w-3/5">
+                <div>
+                  <p className="font-semibold text-foreground text-lg">Monday – Saturday</p>
+                  <p className="text-muted-foreground text-lg">10:00 AM – 07:30 PM</p>
+                </div>
+                <p className="text-primary font-semibold">Sunday — By Appointment Only</p>
+                <div className="pt-4 border-t border-border space-y-2">
+                  <a href={`tel:${CLINIC_PHONE_RAW}`} className="flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors">
+                    <Phone className="w-4 h-4 text-primary flex-shrink-0" /> {CLINIC_PHONE}
+                  </a>
+                  <a href={`tel:${CLINIC_PHONE_2_RAW}`} className="flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors">
+                    <Phone className="w-4 h-4 text-primary flex-shrink-0" /> {CLINIC_PHONE_2}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

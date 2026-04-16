@@ -163,6 +163,71 @@ export default function About() {
         </div>
       </section>
 
+      {/* PATIENT SAFETY */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <motion.h2 variants={fadeInUp} className="text-3xl font-bold mb-2">Safety @ RootZ Dental Clinic</motion.h2>
+              <motion.p variants={fadeInUp} className="text-xl font-semibold text-muted-foreground mb-4">Safety & Hygiene Protocols at RootZ Dental</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed mb-12">
+                At RootZ Dental Clinic, your safety is our top priority. We strictly follow global standards in infection control, sterilization, and patient care — ensuring a worry-free and comfortable dental experience.
+              </motion.p>
+              <motion.div variants={staggerContainer} className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "Frequent Disinfection & Hand Hygiene",
+                    desc: "We maintain round-the-clock disinfection of all surfaces that come into human contact. Every patient and staff member follows rigorous hand-sanitizing protocols to keep the environment safe and clean."
+                  },
+                  {
+                    title: "4-Step Instrument Sterilization",
+                    desc: "All dental instruments undergo a scientifically proven 4-step sterilization process — ensuring 100% sterile and safe tools for every patient."
+                  },
+                  {
+                    title: "Global Standard PPE for Dental Team",
+                    desc: "Our dentists and assistants are equipped with world-class PPE kits, ensuring zero cross-contamination and maximum protection for both patients and staff."
+                  },
+                  {
+                    title: "Responsible Biomedical Waste Disposal",
+                    desc: "We strictly comply with Government regulations for the safe and responsible disposal of biomedical waste — protecting both people and the environment."
+                  },
+                  {
+                    title: "Modified Pre-Treatment Protocols",
+                    desc: "For everyone's protection, we follow upgraded pre-treatment steps — mandatory hand sanitization, infra-red thermal scanning at entry, medical & travel history screening, and iodine mouth rinse before procedures.",
+                    full: true
+                  },
+                  {
+                    title: "Digital Patient Records",
+                    desc: "At RootZ, your entire dental journey is securely stored in our advanced digital medical record system, helping us deliver personalized, precise, and safe care every step of the way.",
+                    full: true
+                  }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeInUp}
+                    className={`bg-card rounded-2xl p-6 border border-border shadow-sm ${(item as {full?: boolean}).full ? "md:col-span-2" : ""}`}
+                  >
+                    <h3 className="font-bold text-lg mb-3 flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed pl-8">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+              <motion.p variants={fadeInUp} className="mt-10 text-center text-lg font-semibold text-primary">
+                RootZ Dental Clinic = Safe Smiles + Global Standards in Patient Care
+              </motion.p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-card border-t border-border text-center">
         <div className="container mx-auto px-4">
